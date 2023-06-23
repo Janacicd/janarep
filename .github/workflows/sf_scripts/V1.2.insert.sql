@@ -1,1 +1,0 @@
-insert into sf_cicd values('jana',100);
