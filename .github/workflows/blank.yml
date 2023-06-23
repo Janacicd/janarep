@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Jana_cicd_process
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run schemachange
+        env: 
+			SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+			SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER_PRE }}
+			SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE_PRE }}
+			SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASS_PRE }}
+			SNOWFLAKE_WH: ${{ secrets.SNOWFLAKE_WH_PRE }}
+			SNOWFLAKE_DB: ${{ secrets.SNOWFLAKE_DB_PRE }}
+
+      # Runs a set of commands using the runners shell      
+        run: |
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+		      python  --version
+          echo "Step 1: Installing schemachange"
+		      pip install schemachange		  
+		      echo "Step 2: Running schemachange"
+		      schemachange -f $GITHUB_WORKSPACE/sf_scripts - a $SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -r $SNOWFLAKE_ROLE -p $SNOWFLAKE_PASSWORD -w $SNOWFLAKE_WH -d $SNOWFLAKE_DB
