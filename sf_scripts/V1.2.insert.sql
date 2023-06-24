@@ -1,1 +1,1 @@
-insert into sf_cicd values('jana',100);
+INSERT INTO JANA_CICD VALUES('AVULA','JANARDHAN');
