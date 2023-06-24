@@ -1,1 +1,4 @@
-create table sf_cicd(name varchar,id int);
+CREATE TABLE JANA_CICD
+(FNAME VARCHAR
+,LNAME VARCHAR
+);
