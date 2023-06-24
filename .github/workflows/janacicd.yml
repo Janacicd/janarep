@@ -27,12 +27,12 @@ jobs:
           
       - name: Run schemachange
         env:
-          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER_PRE }}
-          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE_PRE }}
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASS_PRE }}
-          SNOWFLAKE_WH: ${{ secrets.SNOWFLAKE_WH_PRE }}
-          SNOWFLAKE_DB: ${{ secrets.SNOWFLAKE_DB_PRE }}
+          SNOWFLAKE_ACCOUNT: '${{ secrets.SNOWFLAKE_ACCOUNT }}'
+          SNOWFLAKE_USER: '${{ secrets.SNOWFLAKE_USER_PRE }}'
+          SNOWFLAKE_ROLE: '${{ secrets.SNOWFLAKE_ROLE_PRE }}'
+          SNOWFLAKE_PASSWORD: '${{ secrets.SNOWFLAKE_PASS_PRE }}'
+          SNOWFLAKE_WH: '${{ secrets.SNOWFLAKE_WH_PRE }}'
+          SNOWFLAKE_DB: '${{ secrets.SNOWFLAKE_DB_PRE }}'
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE
           python --version
