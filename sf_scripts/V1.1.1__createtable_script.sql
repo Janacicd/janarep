@@ -1,2 +1,2 @@
 use schema JANA_DEMO;
-create table jana_cid(name varchar,id int);
+create table jana_devops(name varchar,id int);
