@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Install Python 3.9.x
-        uses: actions/setup-python@V2.2.1
+        uses: actions/setup-python@v2.2.1
         with:
           python-version: 3.9.x
           
@@ -40,4 +40,4 @@ jobs:
           pip install schemachange
           
           echo "Step 2: Running schemachange"
-          schemachange -f $GITHUB_WORKSPACE/sf_scripts -$SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -r $SNOWFLAKE_ROLE -p $SNOWFLAKE_PASSWORD -w $SNOWFLAKE_WH -d $SNOWFLAKE_DB -c $SNOWFLAKE_DB.SCHEMACHANGE.CHANGE_HISTORY --create-change-history--
+          schemachange -f $GITHUB_WORKSPACE/sf_scripts -a $SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -r $SNOWFLAKE_ROLE -p $SNOWFLAKE_PASSWORD -w $SNOWFLAKE_WH -d $SNOWFLAKE_DB -c $SNOWFLAKE_DB.SCHEMACHANGE.CHANGE_HISTORY --create-change-history--
