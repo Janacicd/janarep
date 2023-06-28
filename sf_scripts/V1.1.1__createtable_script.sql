@@ -1,2 +1,2 @@
 use schema H23_SCH;
-create table jana_devops(name varchar,id int);
+create table jana_cid(name varchar,id int);
