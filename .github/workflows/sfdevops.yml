@@ -39,4 +39,4 @@ jobs:
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_WH: ${{ secrets.SNOWFLAKE_WH }}
           SNOWFLAKE_DB: ${{ secrets.SNOWFLAKE_DB }}
-        run: schemachange -a $SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -r $SNOWFLAKE_ROLE -w $SNOWFLAKE_WH -d $SNOWFLAKE_DB -c $SNOWFLAKE_DB.JANA_STG.CHANGE_HISTORY --create-change-history-table
+        run: schemachange -a $SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -r $SNOWFLAKE_ROLE -w $SNOWFLAKE_WH -d $SNOWFLAKE_DB -c $SNOWFLAKE_DB.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
