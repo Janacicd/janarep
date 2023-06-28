@@ -1,10 +1,10 @@
-name: snowflake-devops-demo
+name: prod_deployment
 
 #Controls when action will run.
 on:
   push:
     branches:
-      - stg
+      - main
     paths:
       - 'sf_scripts/**'
       
