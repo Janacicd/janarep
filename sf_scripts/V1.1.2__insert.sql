@@ -1,2 +1,2 @@
-USE SCHEMA JANA_DEMO;
+USE SCHEMA H23_SCH;
 insert into JANA_cid values('jana',100);
